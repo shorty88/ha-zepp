@@ -1,7 +1,7 @@
 # Home Assistant companion for Zepp OS devices
 Application that allows you to control a smart home based on the Home Assistant
 
-![image](images/1.png)  ![image](images/2.png) ![image](images/3.png)
+![image](images/b49aeee594c14631dd22ac05b4adef9a30c363f0.jpg)  ![image](images/2.png) ![image](images/3.png)
 
 ## Features
 - Categories
