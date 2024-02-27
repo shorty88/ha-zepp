@@ -1,0 +1,50 @@
+{
+  "_from": "@esbuild/win32-x64@0.16.17",
+  "_id": "@esbuild/win32-x64@0.16.17",
+  "_inBundle": false,
+  "_integrity": "sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==",
+  "_location": "/@esbuild/win32-x64",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@esbuild/win32-x64@0.16.17",
+    "name": "@esbuild/win32-x64",
+    "escapedName": "@esbuild%2fwin32-x64",
+    "scope": "@esbuild",
+    "rawSpec": "0.16.17",
+    "saveSpec": null,
+    "fetchSpec": "0.16.17"
+  },
+  "_requiredBy": [
+    "/esbuild"
+  ],
+  "_resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz",
+  "_shasum": "c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091",
+  "_spec": "@esbuild/win32-x64@0.16.17",
+  "_where": "C:\\Users\\Dales1stdesktop\\Downloads\\ha-zepp-main\\ha-zepp-main\\node_modules\\esbuild",
+  "bugs": {
+    "url": "https://github.com/evanw/esbuild/issues"
+  },
+  "bundleDependencies": false,
+  "cpu": [
+    "x64"
+  ],
+  "deprecated": false,
+  "description": "The Windows 64-bit binary for esbuild, a JavaScript bundler.",
+  "engines": {
+    "node": ">=12"
+  },
+  "homepage": "https://github.com/evanw/esbuild#readme",
+  "license": "MIT",
+  "name": "@esbuild/win32-x64",
+  "os": [
+    "win32"
+  ],
+  "preferUnplugged": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanw/esbuild.git"
+  },
+  "version": "0.16.17"
+}

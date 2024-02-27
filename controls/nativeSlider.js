@@ -189,8 +189,8 @@ export const nativeSlider = (args) => {
                 w: buttonSize,
                 h: buttonSize,
                 radius: buttonSize / 2,
-                normal_color: BUTTON_COLOR_NORMAL,
-                press_color: BUTTON_COLOR_NORMAL,
+                normal_color: 0x1C9CB8,
+                press_color: 0x1C9CB8,
                 click_func: (button_widget) => { setButtonToggle(!buttonState, true) }
             })
 
