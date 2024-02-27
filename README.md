@@ -4,14 +4,15 @@ Application that allows you to control a smart home based on the Home Assistant
 ![image](images/1.png)  ![image](images/2.png) ![image](images/3.png)
 
 ## Features
-- (Binary) Sensor status
+- Categories
 - Toggle switch
 - Toggle light, see its effect (if presented), change its brightness (if this possible)
 - Media player support with play/pause, prev/next, volume control
+- Script support
+- sensor info
+  
 
-### To Do:
-- Editing colors for lights
-- Maybe something else that I don't already have in HA.
+
 
 ### Devices supported
 - Mi Band 7 (You need modified Zepp app (see preparations))
@@ -19,10 +20,10 @@ Application that allows you to control a smart home based on the Home Assistant
 
 ### Preparations
 #### Mi Band 7
-- [Modified Zepp App](https://drive.google.com/file/d/1wx6Er1J462q55uaTOTWeS-IoBWQpkCrD/view?usp=drivesdk) (registration required)
+- [Modified Zepp App](https://drive.google.com/file/d/1wx6Er1J462q55uaTOTWeS-IoBWQpkCrD/view?usp=drivesdk)
 - You need to connect Mi Band 7 to Modified Zepp App the same way you would with Zepp Life (google auth is not  supported)
 - You need to enable [Developer Mode](https://docs.zepp.com/docs/1.0/guides/tools/zepp-app/) in app
-- Install app with QR-code (soon) or build yourself
+- Install app by building on device
 - Open the application settings and specify the addresses of Home Assistant, Long-lived access token and select the sensors you want to display on Zepp OS device
 #### Home Assistant
 - Long-lived access token (you can generate it on your-ha-instance.local/profile page)
