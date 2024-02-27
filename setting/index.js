@@ -54,34 +54,29 @@ AppSettingsPage({
       borderWidth: "2px",
     };
     let entityList = [];
-    let filter = props.settingsStorage.getItem("filter")
     this.state.entityList.forEach((item, i) => {
       if (
-        !item.key.startsWith('light.') &&
-        !item.key.startsWith('switch.') &&
-        !item.key.startsWith('input_boolean.') &&
-        !item.key.startsWith('binary_sensor.') &&
-        !item.key.startsWith('sensor.') &&
+        !item.key.startsWith('light.') && 
+        !item.key.startsWith('switch.') && 
+        !item.key.startsWith('binary_sensor.') && 
+        !item.key.startsWith('sensor.') && 
         !item.key.startsWith('media_player.') &&
         !item.key.startsWith('script.') &&
         !item.key.startsWith('automation.')
       ) {
         return;
       }
-      if(!item.key.includes(filter)) {
-        return;
-      }
       entityList.push(
-        View({
-          style: {
+        View({ 
+          style: { 
             position: 'relative',
-            display: 'flex',
-            borderBottom: "1px solid #eaeaea",
-            padding: "6px 0",
-            marginBottom: '6px'
-          }},
+            display: 'flex', 
+            borderBottom: "1px solid #eaeaea", 
+            padding: "6px 0", 
+            marginBottom: '6px' 
+          }}, 
         [
-          View({ style: { width: "70%" }},
+          View({ style: { width: "70%" }}, 
             Toggle({
               label: `${item.title} (${item.key})`,
               value: item.value,
@@ -125,16 +120,11 @@ AppSettingsPage({
         settingsKey: "HAToken",
         subStyle: textInputStyle,
       }),
-      TextInput({
-        label: "Filter entities id:",
-        subStyle: textInputStyle,
-        settingsKey: "filter",
-      }),
       Section(
         { style: {width: '50%'} },
         Toggle({
           label: "Update sensor data to HA, interval 1 hour (BETA)",
-          value: (props.settingsStorage.getItem("updateSensorsBool") === "true"),
+          value: (props.settingsStorage.getItem("updateSensorsBool") === 'true'),
           onChange: (value) => {
             props.settingsStorage.setItem("updateSensorsBool", value);
           },
@@ -151,7 +141,7 @@ AppSettingsPage({
           },
         })
       ),
-      Text({}, "Only the media player, light, switch, input_boolean, script, automation and (binary) " +
+      Text({}, "Only the media player, light, switch, script, automation and (binary) " +  
       "sensor entities are supported for now:"),
       entityList.length > 0 &&
         View(

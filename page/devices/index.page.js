@@ -2,9 +2,9 @@
 import { DEVICE_HEIGHT, DEVICE_WIDTH, TOP_BOTTOM_OFFSET } from "./index.style";
 
 const {
-  messageBuilder,
-  FS_REF_SENSORS_UPDATE_ALARM_ID,
-  FS_REF_SENSORS_UPDATE_STATE,
+    messageBuilder,
+    FS_REF_SENSORS_UPDATE_ALARM_ID,
+    FS_REF_SENSORS_UPDATE_STATE,
 } = getApp()._options.globalData;
 
 const logger = DeviceRuntimeCore.HmLogger.getLogger("ha-zepp-main");
@@ -50,7 +50,9 @@ Page({
       if (existingAlarm) {
         hmApp.alarmCancel(existingAlarm);
       }
-      hmApp.gotoHome();
+        hmApp.gotoPage({
+            file: "page/devices/index.page",
+        });
     }
   },
   getEntityList() {
@@ -89,122 +91,9 @@ Page({
     const widget = hmUI.createWidget(...args);
     this.state.widgets.push(widget);
     return widget;
-    },
-
-   createButton() {
-        const iconsize = 100;
-        const titleHeight = 35;
-        const valueHeight = 15;
-        const entitiesGap = 5;
-       const totalHeight = iconsize + valueHeight + entitiesGap + titleHeight;
-       this.createWidget(hmUI.widget.TEXT, {
-           x: 0,
-           y: this.state.y,
-           w: DEVICE_WIDTH,
-           h: titleHeight,
-           text: "Devices",
-           text_size: 25,
-           color: 0xFFFFFF,
-           align_h: hmUI.align.CENTER_H,
-       });
-        const device_button = this.createWidget(hmUI.widget.IMG, {
-            x: DEVICE_WIDTH / 5,
-            y: this.state.y + titleHeight,
-            src: "tablet.png",
-            text: "Devices",
-            align_h: hmUI.align.CENTER_H,
-        });
-       device_button.addEventListener(hmUI.event.CLICK_UP, () => {
-           hmApp.gotoPage({ file: "page/devices/index.page", });
-       });
-       this.state.y += totalHeight;
-    },
-    createButton2() {
-        const iconsize = 100;
-        const titleHeight = 35;
-        const valueHeight = 15;
-        const entitiesGap = 5;
-        const totalHeight = iconsize + valueHeight + entitiesGap + titleHeight;
-        this.createWidget(hmUI.widget.TEXT, {
-            x: 0,
-            y: this.state.y,
-            w: DEVICE_WIDTH,
-            h: titleHeight,
-            text: "Scripts",
-            text_size: 25,
-            color: 0xFFFFFF,
-            align_h: hmUI.align.CENTER_H,
-        });
-        const device_button2 = this.createWidget(hmUI.widget.IMG, {
-            x: DEVICE_WIDTH / 5,
-            y: this.state.y + titleHeight,
-            src: "automation (1).png",
-            text: "Scripts",
-            align_h: hmUI.align.CENTER_H,
-        });
-        device_button2.addEventListener(hmUI.event.CLICK_UP, () => {
-            hmApp.gotoPage({ file: "page/scripts/index.page", });
-        });
-        this.state.y += totalHeight;
-    },
-    createButton3() {
-        const iconsize = 100;
-        const titleHeight = 35;
-        const valueHeight = 15;
-        const entitiesGap = 5;
-        const totalHeight = iconsize + valueHeight + entitiesGap + titleHeight;
-        this.createWidget(hmUI.widget.TEXT, {
-            x: 0,
-            y: this.state.y,
-            w: DEVICE_WIDTH,
-            h: titleHeight,
-            text: "Sensors",
-            text_size: 25,
-            color: 0xFFFFFF,
-            align_h: hmUI.align.CENTER_H,
-        });
-        const device_button3 = this.createWidget(hmUI.widget.IMG, {
-            x: DEVICE_WIDTH / 5,
-            y: this.state.y + titleHeight,
-            src: "sensor.png",
-            text: "Sensors",
-            align_h: hmUI.align.CENTER_H,
-        });
-        device_button3.addEventListener(hmUI.event.CLICK_UP, () => {
-            hmApp.gotoPage({ file: "page/sensors/index.page", });
-        });
-        this.state.y += totalHeight;
-    },
-    createButton4() {
-        const iconsize = 100;
-        const titleHeight = 35;
-        const valueHeight = 15;
-        const entitiesGap = 10;
-        const totalHeight = iconsize + valueHeight + entitiesGap + titleHeight;
-        this.createWidget(hmUI.widget.TEXT, {
-            x: 0,
-            y: this.state.y,
-            w: DEVICE_WIDTH,
-            h: titleHeight,
-            text: "Media Players",
-            text_size: 25,
-            color: 0xFFFFFF,
-            align_h: hmUI.align.CENTER_H,
-        });
-        const device_button4 = this.createWidget(hmUI.widget.IMG, {
-            x: DEVICE_WIDTH / 5,
-            y: this.state.y + titleHeight,
-            src: "streaming.png",
-            text: "Media Players",
-            align_h: hmUI.align.CENTER_H,
-        });
-        device_button4.addEventListener(hmUI.event.CLICK_UP, () => {
-            hmApp.gotoPage({ file: "page/media/index.page", });
-        });
-        this.state.y += totalHeight;
-    },
+  },
   createEntity(item) {
-    const titleHeight = 35;
+    const titleHeight = 32;
     const valueHeight = 35;
     const entitiesGap = 10;
     const totalHeight = titleHeight + valueHeight + entitiesGap;
@@ -214,7 +103,7 @@ Page({
       w: DEVICE_WIDTH,
       h: titleHeight,
       text: item.title,
-      text_size: 25,
+      text_size: 17,
       color: 0xaaaaaa,
       align_h: hmUI.align.CENTER_H,
     });
@@ -224,7 +113,7 @@ Page({
       w: DEVICE_WIDTH,
       h: valueHeight,
       text: item.state,
-      text_size: 22,
+      text_size: 16,
       color: 0xffffff,
       align_h: hmUI.align.CENTER_H,
     });
@@ -252,7 +141,7 @@ Page({
     this.state.y += totalHeight;
   },
   createSwitchable(item) {
-    const titleHeight = 35;
+    const titleHeight = 32;
     const valueHeight = 48;
     const entitiesGap = 10;
     const totalHeight = titleHeight + valueHeight + entitiesGap;
@@ -262,7 +151,7 @@ Page({
       w: DEVICE_WIDTH,
       h: titleHeight,
       text: item.title,
-      text_size: 25,
+      text_size: 17,
       color: 0xaaaaaa,
       align_h: hmUI.align.CENTER_H,
     });
@@ -306,7 +195,7 @@ Page({
     this.state.y += totalHeight;
   },
   createExecutable(item) {
-    const titleHeight = 35;
+    const titleHeight = 32;
     const valueHeight = 48;
     const entitiesGap = 10;
     const totalHeight = titleHeight + valueHeight + entitiesGap;
@@ -316,7 +205,7 @@ Page({
       w: DEVICE_WIDTH,
       h: titleHeight,
       text: item.title,
-      text_size: 25,
+      text_size: 17,
       color: 0xaaaaaa,
       align_h: hmUI.align.CENTER_H,
     });
@@ -360,18 +249,14 @@ Page({
     ) {
       return this.createSwitchable(item);
     }
-    if (item.type === "script" && item.state !== "unavailable") {
-      return this.createExecutable(item);
-    }
-    return this.createEntity(item);
+
   },
   createAndUpdateList() {
     this.clearWidgets();
     this.state.rendered = false;
-    this.createButton();
-    this.createButton2();
-    this.createButton3();
-    this.createButton4();
+    this.state.dataList.forEach((item) => {
+      this.createElement(item);
+    });
     this.createElement("end");
     this.state.rendered = true;
   },

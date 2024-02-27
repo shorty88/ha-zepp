@@ -5,7 +5,7 @@
     "appName": "Home Assistant",
     "appType": "app",
     "version": {
-      "code": 2,
+      "code": 1,
       "name": "1.1.0"
     },
     "icon": "icon.png",
@@ -27,6 +27,10 @@
         "page": {
           "pages": [
             "page/home/index.page",
+            "page/devices/index.page",
+            "page/scripts/index.page",
+            "page/sensors/index.page",
+            "page/media/index.page",
             "page/light/index.page",
             "page/light/effectPicker.page",
             "page/media_player/index.page",
@@ -60,48 +64,6 @@
         {
           "name": "mi-band7",
           "deviceSource": 262
-        }
-      ],
-      "designWidth": 194
-    },
-    "amazfit-band7": {
-      "module": {
-        "page": {
-          "pages": [
-            "page/home/index.page",
-            "page/light/index.page",
-            "page/light/effectPicker.page",
-            "page/media_player/index.page",
-            "page/sensors_update/index.page",
-            "page/test_page/index.page"
-          ],
-          "window": {
-            "navigationBarBackgroundColor": "#ffffff",
-            "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Home Assistant",
-            "backgroundColor": "#eeeeee",
-            "backgroundTextStyle": "light"
-          }
-        },
-        "app-side": {
-          "path": "app-side/index"
-        },
-        "setting": {
-          "path": "setting/index"
-        }
-      },
-      "platforms": [
-        {
-          "name": "amazfit-band7-nfc",
-          "deviceSource": 252
-        },
-        {
-          "name": "amazfit-band7",
-          "deviceSource": 253
-        },
-        {
-          "name": "amazfit-band7-w",
-          "deviceSource": 254
         }
       ],
       "designWidth": 194
@@ -142,84 +104,6 @@
         }
       ],
       "designWidth": 90
-    },
-    "balance": {
-      "module": {
-        "page": {
-          "pages": [
-            "page/home/index.page",
-            "page/light/index.page",
-            "page/light/effectPicker.page",
-            "page/media_player/index.page",
-            "page/test_page/index.page"
-          ],
-          "window": {
-            "navigationBarBackgroundColor": "#ffffff",
-            "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Home Assistant",
-            "backgroundColor": "#eeeeee",
-            "backgroundTextStyle": "light"
-          }
-        },
-        "app-side": {
-          "path": "app-side/index"
-        },
-        "setting": {
-          "path": "setting/index"
-        }
-      },
-      "platforms": [
-        {
-          "name": "balance",
-          "deviceSource": 8519936
-        },
-        {
-          "name": "balance-w",
-          "deviceSource": 8519937
-        },
-        {
-          "name": "balance-x",
-          "deviceSource": 8519939
-        }
-      ],
-      "designWidth": 100
-    },
-    "trex2": {
-      "module": {
-        "page": {
-          "pages": [
-            "page/home/index.page",
-            "page/light/index.page",
-            "page/light/effectPicker.page",
-            "page/media_player/index.page",
-            "page/test_page/index.page"
-          ],
-          "window": {
-            "navigationBarBackgroundColor": "#ffffff",
-            "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Home Assistant",
-            "backgroundColor": "#eeeeee",
-            "backgroundTextStyle": "light"
-          }
-        },
-        "app-side": {
-          "path": "app-side/index"
-        },
-        "setting": {
-          "path": "setting/index"
-        }
-      },
-      "platforms": [
-        {
-          "name": "trex2",
-          "deviceSource": 418
-        },
-        {
-          "name": "trex2-w",
-          "deviceSource": 419
-        }
-      ],
-      "designWidth": 545
     }
   },
   "i18n": {

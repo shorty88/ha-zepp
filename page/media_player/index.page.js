@@ -361,7 +361,7 @@ Page({
                 stateImages: ["volume_min_1.png", "volume_min_2.png", "volume_mid.png", "volume_mid.png", "volume_max.png", "volume_max.png"],
                 button: nativeSliderButton,
                 backColor: 0x303030,
-                frontColor: 0xf0f0f0
+                frontColor: 0x1C9CB8
             })
 
             this.state.volumeBar = createProgressBar(
@@ -371,7 +371,7 @@ Page({
                     h: 24,
                     w: DEVICE_WIDTH - 20,
                     backColor: 0x262626,
-                    frontColor: 0xffffff,
+                    frontColor: 0x1C9CB8,
                     src: "volume_up.png",
                     ctx: this,
                     onClick: (ctx) => {
